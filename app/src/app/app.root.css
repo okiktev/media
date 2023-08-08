@@ -1,0 +1,28 @@
+.menu-btn {
+	font-size:x-large;
+    color:lightgrey;
+}
+table {
+	margin-left:auto;
+	margin-right:auto
+}
+td {
+	vertical-align:top
+}
+.film-preview {
+	border:solid 1px;
+	border-radius:5px;
+	margin:5px;
+	padding:5px;
+	overflow:hidden;
+	white-space:nowrap;
+	background-color:#141516
+}
+td img {
+	width:100%
+}
+.film-name {
+	font-weight:bold;
+	font-size:x-large
+}
+

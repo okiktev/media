@@ -1,0 +1,32 @@
+
+body {
+  --bs-body-font-family: 'Segoe UI Light';
+  --bs-body-font-size: 11pt;
+  font-weight: lighter;
+  --bs-body-color: darkgray;
+  --bs-body-bg: black;
+}
+
+.modal {
+    --bs-modal-color: darkgray;
+    --bs-modal-bg: #141516;
+    --bs-modal-border-color: darkgray;
+    --bs-modal-header-border-width: 0px;
+    --bs-modal-footer-border-color: darkgray;
+    --bs-modal-footer-border-width: 0px;
+}
+
+.modal h5 {
+	font-weight: bold;
+}
+
+.close-btn {
+	border-width: 0px;
+    background-color: transparent;
+    color: #d33e3e;
+    font-size: larger;
+}
+
+.media-icon {
+	margin-right:0.5em
+}

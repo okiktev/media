@@ -1,0 +1,41 @@
+
+
+<div style="margin:5px;padding:5px;">
+	<button class="btn btn-secondary" style="background-color:transparent;border:none" (click)="openSettingsDlg()" >
+		<i class="fa fa-cog menu-btn" aria-hidden="true"></i>
+	</button>
+	<settings-dialog [cfg]="cfg"></settings-dialog>
+</div>
+
+
+<film-dialog [cfg]="cfg" [film]="editedFilm"></film-dialog>
+
+<table>
+
+	<tr *ngFor="let r of getGrid()">
+
+		<td *ngFor="let f of r.films" >
+			<div class="film-preview" [ngStyle]="{'width':previewWidth}" >
+				<img [src]="'./' + f.imgPath + '/' + f.hash + '_' + f.imgTimestamp + '.png'" />
+				<div class="film-name">{{f.name}}</div>
+				<i class="fa fa-film media-icon"></i>{{f.width}}x{{f.height}}<br/>
+				<div *ngFor="let a of f.audioTracks"><i class="fa fa-file-audio-o media-icon"></i>{{a}}</div><br/>
+				<button (click)="onPlay(f)" class="btn btn-success" >
+					<i class="fa fa-play" ></i>
+				</button>
+				<button (click)="onEdit(f)" class="btn btn-secondary" style="margin-left:5px" >
+					<i class="fa fa-pencil" ></i>
+				</button>
+			</div>
+		</td>
+		
+	</tr>
+
+</table>
+				
+
+
+
+<div style="clear:both"></div>
+
+
