@@ -2,7 +2,7 @@
 
 <p>Web UI tool for managing video from file system</p> 
 
-<img src="https://raw.githubusercontent.com/okiktev/matrix/main/screen.png">
+<img src="https://raw.githubusercontent.com/okiktev/media/main/screen.png">
 
 
 ## to run media
