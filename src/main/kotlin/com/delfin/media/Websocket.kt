@@ -39,10 +39,9 @@ class TextHandler : TextWebSocketHandler() {
     public override fun handleTextMessage(session: WebSocketSession, message: TextMessage) {
 		val jsonPayload = JSONObject(message.payload)
 		val cfg = jsonPayload.get("cfg") as JSONObject
-		var fimlsPerRow: Int = 4
 		val names = JSONObject.getNames(cfg)
 		if (names != null && names.contains("fimlsPerRow")) {			
-			fimlsPerRow = cfg.get("fimlsPerRow") as Int
+			Store.setFilmsPerRow(cfg.get("fimlsPerRow") as Int)
 		}
 		if (names != null && names.contains("imgTimestamp")) {			
 			val imgTimestamp = cfg.get("imgTimestamp") as Int
@@ -60,21 +59,21 @@ class TextHandler : TextWebSocketHandler() {
 			return
 		}
 
-		val msg: Message = Message(Store.getFilms(), Cfg(fimlsPerRow), Cmd(null))
+		val msg: Message = Message(Store.getFilms(), Store.getCfg(), Cmd(null))
 		session.sendMessage(TextMessage(JSONObject(msg).toString()))
     }
 
 }
 
 class Message(val films: List<Film>, val cfg: Cfg, val cmd: Cmd) {
-	
+
 }
 
-class Cfg(val fimlsPerRow: Int?) {
-	
+class Cfg(var fimlsPerRow: Int?) {
+
 }
 
 class Cmd(val updateFilm: Boolean?) {
-	
+
 }
 

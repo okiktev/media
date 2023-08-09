@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 import java.util.stream.Stream
+import com.delfin.media.websocket.Cfg
 
 
 class Store {
@@ -42,7 +43,14 @@ class Store {
 	}
 
 	companion object {
-		val store: Store = Store()
+		private val store: Store = Store()
+		private val cfg: Cfg = Cfg(4)
+		fun setFilmsPerRow(filmsPerRow: Int) {
+			cfg.fimlsPerRow = filmsPerRow
+		}
+		fun getCfg(): Cfg {
+			return cfg
+		}
 		fun add(film : Film) {
 			println("adding film $film")
 			store.toAdd.put(film.hash, film)
