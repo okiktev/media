@@ -26,6 +26,10 @@ There following tools are required to run media:
 > cd scripts
 > frontend.bat
 ```
+```bat
+> cd scripts
+> action_listener.bat
+```
 
 
 ## contribute
